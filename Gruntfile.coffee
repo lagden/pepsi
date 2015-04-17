@@ -225,8 +225,17 @@ module.exports = (grunt) ->
       ]
 
     clean:
-      dist: ['<%= project.prod %>']
-      tmp:  ['<%= project.tmp %>']
+      dist:    ['<%= project.prod %>']
+      tmp:     ['<%= project.tmp %>']
+      sprites: [
+        '<%= project.prod %>/images/sprites/halloween'
+        '<%= project.prod %>/images/sprites/halloween2x'
+      ]
+
+    copy:
+      dist:
+        src:  '<%= project.dev %>/favicon.ico'
+        dest: '<%= project.prod %>/favicon.ico'
 
   grunt.registerTask 'default', [
     'clean:tmp'
@@ -251,6 +260,8 @@ module.exports = (grunt) ->
     'cssmin'
     'imagemin'
     'minifyHtml'
+    'copy'
+    'clean:sprites'
   ]
 
   grunt.registerTask 'server', [
