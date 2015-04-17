@@ -1,0 +1,18 @@
+#!/bin/bash
+
+THIS=$(basename $0)
+DIR="$( cd -P "$( dirname "$0" )" && pwd )"
+cd $DIR
+cd ..
+CURR_FOLDER=`pwd`
+
+# Go
+cd $CURR_FOLDER
+
+if [ -d build ]
+then
+  cp -r build/. ./
+  rm -rf build
+fi
+
+exit
