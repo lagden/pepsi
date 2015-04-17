@@ -1,0 +1,29 @@
+// Geral
+// -------------------------
+html, body
+  margin: 0
+  padding: 0
+
+html
+  +monospace
+  min-height: 100%
+
+  color: $gray
+  background:
+    color: $white
+
+body
+  position: relative
+  padding: 10px
+
+// Halloween stuff
+.lista
+  display: flex
+  flex-direction: column
+  margin: 1em
+  justify-content: space-around
+  +breakpoint(668px)
+    flex-direction: row
+
+  > div
+    margin: 1em auto
